@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpRequest
 from django.http import HttpResponse
 def index(request):
-    return HttpResponse("hello world")
+    my_dic={'insert_me':"hello I'm Kanu from views"}
+    return render(request,'index.html',context=my_dic)
 
-# Create your views here.
