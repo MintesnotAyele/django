@@ -1,7 +1,6 @@
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','first_project.settings')
 
-print("populating script!")
 import django
 django.setup()
 

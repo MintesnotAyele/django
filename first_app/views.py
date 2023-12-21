@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from first_app.models import AccessRecord,Topic,Webpage
 def index(request):
-    my_dic={'insert_me':"hello I'm Kanu from views"}
-    return render(request,'index.html',context=my_dic)
+    webpg=AccessRecord.objects.all()
+    dic_my={'Access_record':webpg}
+    return render(request,'index.html',context=dic_my)
 

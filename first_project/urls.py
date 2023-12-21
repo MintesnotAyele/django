@@ -19,6 +19,6 @@ from django.urls import path
 from first_app import views
 
 urlpatterns = [
-    path('index/',views.index),
+    path('',views.index),
     path('admin/', admin.site.urls),
 ]

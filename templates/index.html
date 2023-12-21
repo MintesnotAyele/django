@@ -1,13 +1,39 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>frist Django App</title>
+    <style>table,td{
+        border: solid 2px black;
+        background-color: darkgray;
+    }
+    th{
+        color: rgb(36, 43, 41);
+        border: solid 2px black;
+        background-color: brown;
+    }</style>
+    <link rel="stylesheet" href="{% static "css/mystyle.css"%}"/>
+    <title>Django</title>
 </head>
 <body>
-    <h1>I have done it</h1>
-    {{ insert_me }}
-    
+ <h1>Hi welcome to Django Level two</h1>
+ <h2>here are your access records</h2>
+   {%if Access_record %}
+   <table>
+    <thead>
+        <th>Site Name</th>
+        <th>Data Accessed</th>
+    </thead>
+    {%for acc in Access_record %}
+    <tr>
+        <td>{{acc.name}}</td>
+        <td>{{acc.date}}</td>
+    </tr>
+    {%endfor%}
+   </table> 
+   {% else%}
+   <h1>No data is found</h1>
+  {%endif%}
 </body>
 </html>
